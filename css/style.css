@@ -1,0 +1,810 @@
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*,
+::before,
+::after
+{
+    box-sizing: inherit;
+}
+
+body
+{
+    min-width: 320px;
+    margin: 0 auto;
+
+    letter-spacing: 1px;
+
+    color: white;
+
+    font: 18px 'San Francisco Pro', sans-serif;
+}
+
+img
+{
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+}
+
+a
+{
+    display: inline-block;
+
+    transition: filter .5s linear;
+    text-decoration: none;
+
+    color: white;
+}
+
+a:focus
+{
+    outline: none;
+}
+
+ul
+{
+    list-style-type: none;
+
+    text-decoration: none;
+}
+
+li
+{
+    display: inline-block;
+}
+
+button
+{
+    display: inline-block;
+
+    cursor: pointer;
+    transition: filter .5s ease-in;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+}
+
+button:hover,
+button:focus,
+a:hover,
+a:focus
+{
+    filter: invert(80%);
+}
+
+.wrap-container
+{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.flex
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.header
+{
+    position: absolute;
+
+    width: 100%;
+    min-width: 320px;
+}
+
+.header__wrap-container
+{
+    margin: 0 auto;
+    padding: 42px 20px 30px;
+
+    border-bottom: 1px solid white;
+}
+
+.header__nav
+{
+    width: 33%;
+}
+
+.nav__item:not(:last-child)
+{
+    padding-right: 57px;
+}
+
+.header__logo
+{
+    letter-spacing: 0;
+
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.header__auth
+{
+    width: 33%;
+
+    text-align: end;
+}
+
+.nav__burger
+{
+    position: relative;
+
+    display: none;
+
+    width: 25px;
+    height: 21px;
+}
+
+.nav__burger span
+{
+    position: absolute;
+
+    width: 100%;
+    height: 3px;
+
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transition-duration: 500ms;
+
+    border-radius: 20px;
+}
+
+.nav__burger span:nth-child(1)
+{
+    top: 0;
+    left: 0;
+
+    background-color: white;
+}
+
+.nav__burger span:nth-child(2)
+{
+    top: 9px;
+    left: 0;
+
+    opacity: 1;
+    background-color: white;
+}
+
+.nav__burger span:nth-child(3)
+{
+    bottom: 0;
+    left: 0;
+
+    background-color: white;
+}
+
+.nav__burger:hover span:nth-child(1)
+{
+    transform: rotate(-3deg) scaleY(1.1);
+}
+
+.nav__burger:hover span:nth-child(2)
+{
+    transform: rotate(3deg) scaleY(1.1);
+}
+
+.nav__burger:hover span:nth-child(3)
+{
+    transform: rotate(-4deg) scaleY(1.1);
+}
+
+.nav__burger.open span:nth-child(2)
+{
+    opacity: 0;
+}
+
+.auth__variant
+{
+    padding-right: 54px;
+}
+
+.auth__variant:not(:first-child)
+{
+    padding-right: 80px;
+}
+
+.header__search
+{
+    width: 21px;
+    height: 21px;
+
+    vertical-align: middle;
+
+    background: url(../img/search.svg) no-repeat;
+    background-size: contain;
+}
+
+.auth__button
+{
+    display: none;
+
+    width: 21px;
+    height: 21px;
+    padding: 0 10px 0 0;
+
+    vertical-align: middle;
+
+    background: url(../img/user.png) no-repeat;
+    background-size: contain;
+}
+
+.main
+{
+    overflow: hidden;
+
+    background: url(../img/main-picture.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main__wrap-container
+{
+    max-width: 1680px;
+    margin: 0 0 0 auto;
+    padding: 314px 0 165px 20px;
+}
+
+.about__tour-title
+{
+    padding: 20px 0 30px 0;
+
+    font-size: 96px;
+    font-weight: 900;
+    line-height: 110%;
+}
+
+.about__tour-description
+{
+    max-width: 550px;
+
+    word-spacing: 4px;
+
+    opacity: 80%;
+
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.side-bar__flex
+{
+    align-items: stretch;
+}
+
+.side-bar
+{
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 10px 0 0 10px;
+    background: rgba(255, 255, 255, .15);
+
+            backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.side-bar__text
+{
+    max-width: 370px;
+
+    filter: none;
+}
+
+.side-bar__button
+{
+    width: 43px;
+    height: 14px;
+    margin: 0 0 0 35px;
+    padding: 0 0 40px 0;
+
+    background: url(../img/Vector.svg) no-repeat;
+    background-size: contain;
+}
+
+.side-bar__img
+{
+    max-width: 270px;
+}
+
+.text__description
+{
+    padding: 49px 0 0 39px;
+
+    letter-spacing: 0;
+
+    opacity: 50%;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.text__title
+{
+    display: inline-block;
+
+    padding: 33px 37px 86px;
+
+    letter-spacing: 2px;
+
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 135%;
+}
+
+.form
+{
+    width: 100%;
+    height: 200px;
+
+    border-radius: 10px 10px 0 0;
+    background: rgba(255, 255, 255, .15);
+
+    font-size: 0;
+
+            backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.form__flex
+{
+    align-items: baseline;
+}
+
+.form__fieldset
+{
+    width: 100%;
+    margin: 3px auto 0;
+    padding: 17px 0 0 50px;
+
+    border: none;
+}
+
+.form__title
+{
+    width: 100%;
+    padding: 32px 0 0 0;
+
+    word-spacing: 4px;
+
+    font-size: 18px;
+}
+
+.form__label
+{
+    position: absolute;
+
+    padding: 15px 0 0 60px;
+
+    opacity: .6;
+    color: #e7e7f2;
+
+    font-size: 14px;
+}
+
+.form__label:nth-child(6)
+{
+    padding: 15px 0 0 20px;
+}
+
+.form__input
+{
+    display: inline-block;
+
+    height: 47px;
+    padding: 23px 35px 0 0;
+
+    letter-spacing: 1px;
+
+    color: white;
+    border: 1px solid rgba(231, 231, 242, .3);
+    outline: none;
+    background: none;
+
+    font-size: 16px;
+}
+
+.form__input::placeholder
+{
+    color: #fff;
+}
+
+.form__input:not(:nth-child(9))
+{
+    border-right: none;
+}
+
+.form__input:nth-child(3)
+{
+    border-radius: 10px 0 0 10px;
+}
+
+.form__input:nth-child(9)
+{
+    border-radius: 0 10px 10px 0;
+}
+
+.form__accommodation
+{
+    width: 26.3%;
+    padding-left: 58px;
+
+    background: url(../img/location.svg) left 15px center no-repeat,
+    url(../img/v.svg) right 23px center no-repeat;
+}
+
+.form__check-in
+{
+    width: 6.8%;
+    padding-left: 62px;
+
+    background: url(../img/calendar.svg) left 20px center no-repeat;
+}
+
+.form__check-out
+{
+    width: 6.7%;
+    padding-left: 20px;
+}
+
+.form__guests
+{
+    width: 12%;
+    padding-left: 61px;
+
+    background: url(../img/guest.svg) 20px center no-repeat,
+    url(../img/v.svg) right 23px center no-repeat;
+}
+
+.form__submit
+{
+    display: inline-block;
+
+    width: 16%;
+    margin: 0 0 0 31px;
+    padding: 26px 10px;
+
+    vertical-align: top;
+
+    color: #fff;
+    border-radius: 10px;
+    background: #91cb82;
+
+    font-size: 18px;
+}
+
+@media (max-width: 1299px) and (min-width: 1024px)
+{
+    .form__fieldset
+    {
+        width: auto;
+        padding: 20px 0 0 20px;
+    }
+
+    .form__input
+    {
+        letter-spacing: 0;
+
+        font-size: 14px;
+    }
+
+    .form__accommodation
+    {
+        width: 24%;
+    }
+
+    .form__guests
+    {
+        width: 10%;
+    }
+
+    .form__submit
+    {
+        width: 11%;
+    }
+
+    .text__description
+    {
+        font-size: 18px;
+    }
+
+    .text__title
+    {
+        font-size: 32px;
+    }
+
+    .about
+    {
+        min-width: 640px;
+    }
+
+    .about__tour-title
+    {
+        font-size: 80px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 577px)
+{
+    .nav__link
+    {
+        font-size: 14px;
+    }
+
+    .header__logo
+    {
+        padding: 0 0 10px 0;
+    }
+
+    .auth__variant
+    {
+        font-size: 14px;
+    }
+
+    .auth__variant
+    {
+        padding: 0 20px 0 0;
+    }
+
+    .auth__variant:not(:first-child)
+    {
+        padding-right: 25px;
+    }
+
+    .header__search
+    {
+        width: 16px;
+        height: 16px;
+    }
+
+    .main__flex
+    {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main__wrap-container
+    {
+        padding: 150px 20px 50px;
+    }
+
+    .about
+    {
+        padding: 0 0 60px 0;
+    }
+
+    .about__tour-title
+    {
+        text-align: center;
+
+        font-size: 80px;
+    }
+
+    .about__tour-description
+    {
+        max-width: 100%;
+
+        text-align: center;
+
+        font-size: 22px;
+    }
+
+    .text__title
+    {
+        padding: 25px 20px 30px;
+    }
+
+    .side-bar__flex
+    {
+        align-items: center;
+    }
+
+    .side-bar__button
+    {
+        width: 40px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 1024px)
+{
+    .form
+    {
+        height: auto;
+    }
+
+    .form__fieldset
+    {
+        width: 100%;
+        max-width: 500px;
+        padding: 0 10px;
+
+        text-align: left;
+    }
+
+    .form__title
+    {
+        padding: 30px 0 20px 0;
+    }
+
+    .form__input
+    {
+        width: 80%;
+        margin: 10px auto;
+        padding: 0 35px 0 35px;
+
+        border-radius: 10px;
+        background-size: 3%;
+
+        font-size: 12px;
+    }
+
+    .form__input:not(:nth-child(9))
+    {
+        border-radius: 10px;
+    }
+
+    .form__input:not(:nth-child(9))
+    {
+        border-right: 1px solid rgba(231, 231, 242, .3);
+    }
+
+    .form__input:nth-child(9)
+    {
+        border-radius: 10px;
+    }
+
+    .form__submit
+    {
+        width: 90%;
+        margin: 40px auto;
+    }
+
+    .form__label
+    {
+        position: relative;
+
+        padding: 0;
+    }
+
+    .form__label:nth-child(6)
+    {
+        padding: 0;
+    }
+
+    .form__check-out
+    {
+        background: url(../img/calendar.svg) left 20px center no-repeat;
+        background-size: 3%;
+    }
+}
+
+@media (max-width: 577px)
+{
+    .nav__item
+    {
+        display: none;
+    }
+
+    .nav__burger
+    {
+        display: inline-block;
+    }
+
+    .auth__variant
+    {
+        display: none;
+    }
+
+    .auth__button
+    {
+        display: inline-block;
+    }
+
+    .main__wrap-container
+    {
+        display: inline-block;
+
+        padding: 120px 20px 50px;
+    }
+
+    .about
+    {
+        width: 100%;
+        padding: 0 0 20px 0;
+    }
+
+    .about__tour-title
+    {
+        text-align: center;
+
+        font-size: 10vw;
+    }
+
+    .about__tour-description
+    {
+        text-align: center;
+
+        font-size: 4vw;
+    }
+
+    .side-bar
+    {
+        border-radius: 10px;
+    }
+
+    .side-bar__text
+    {
+        text-align: center;
+    }
+
+    .side-bar__flex
+    {
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .side-bar__img
+    {
+        max-width: 100%;
+        height: 300px;
+        padding: 10px 0 0 0;
+
+        object-fit: cover;
+    }
+
+    .text__description
+    {
+        padding: 10px 0 0 0;
+
+        font-size: 3vw;
+    }
+
+    .text__title
+    {
+        width: 100%;
+        padding: 20px 0;
+
+        font-size: 5vw;
+    }
+
+    .side-bar__button
+    {
+        width: 30px;
+        margin: 0;
+        padding: 0;
+
+        transform: rotate(90deg);
+    }
+}
+
+@media (min-width: 2000px)
+{
+    .main__wrap-container
+    {
+        margin: 0 auto;
+    }
+
+    .side-bar
+    {
+        border-radius: 10px;
+    }
+}

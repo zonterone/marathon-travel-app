@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Travel app</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#" />
+  <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/scripts.js" defer></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="wrap-container flex header__wrap-container">
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#">About</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Contact</a>
+          </li>
+        </ul>
+        <button class="nav__burger" aria-label="Burger button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </nav>
+      <a class="header__logo" href="#">Camping.</a>
+      <div class="header__auth auth">
+        <a class="auth__variant" href="#">Sign in</a>
+        <a class="auth__variant" href="#">Sign Up</a>
+        <button class="auth__button"></button>
+        <button class="header__search"></button>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="wrap-container flex main__wrap-container main__flex">
+      <div class="about">
+        <h1 class="about__tour-title">Beatiful Places of&nbsp;England</h1>
+        <p class="about__tour-description">
+          Plan your vacation on&nbsp;the most beatiful places of&nbsp;England
+        </p>
+      </div>
+      <div class="side-bar flex side-bar__flex">
+        <div class="side-bar__text text">
+          <p class="text__description">Up next</p>
+          <h2 class="text__title">Aerial View of&nbsp;Rock Cliffs</h2>
+          <button class="side-bar__button">
+          </button>
+        </div>
+        <img class="side-bar__img" src="img/right-picture.jpg" alt="" />
+      </div>
+    </section>
+    <form class="wrap-container flex form__flex form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+      <fieldset class="form__fieldset">
+        <legend class="form__title">Book your vacation</legend>
+        <label class="form__label" for="accommodation">
+          Accommodation
+        </label>
+        <input class="form__input form__accommodation" id="accommodation" name="accommodation" type="text"
+          value="6730 Luna Land North Rhiannonmouth" required>
+        <label class="form__label" for="check-in">
+          Check-in
+        </label>
+        <input class="form__input form__check-in" id="check-in" name="check-in" type="text" value="19.06.2019"
+          required />
+        <label class="form__label" for="check-out">
+          Check-out
+        </label>
+        <input class="form__input form__check-out" id="check-out" name="check-out" type="text" value="19.06.2019"
+          required />
+        <label class="form__label" for="guests">
+          Guests
+        </label>
+        <input class="form__input form__guests" id="guests" name="guests" type="text" value="4 adults" required>
+        <button class="form__submit" type="submit">Search</button>
+      </fieldset>
+    </form>
+  </main>
+</body>
+
+</html>
